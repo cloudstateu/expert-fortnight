@@ -1,10 +1,10 @@
 FROM node:16-alpine as build
 
 WORKDIR /home/app
-COPY package*.json .
+COPY package*.json ./
 RUN npm ci --silent
 
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 # production environment
